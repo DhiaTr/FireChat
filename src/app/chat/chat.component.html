@@ -1,0 +1,27 @@
+<div class="container main my-5">
+    <div class="row">
+        <div class="col-md-4 namesList">
+            <ul>
+                <li *ngFor="let User of Users">
+                    <a>
+                        {{ User.displayName }}   
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
+        <div class="col-md-7 MsgDisplay">
+            <chat-interface></chat-interface>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+</div>

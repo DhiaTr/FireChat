@@ -1,0 +1,41 @@
+<div class="container form-container col-lg-4">
+    <div class="container">
+        <form #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)">
+            <h2 class="justify-content-center row my-3">Sign Up</h2>
+            <div class="form-group">
+                <label for="Display">Display Name</label>
+                <input
+                    ngModel
+                    #Display="ngModel"  
+                    type="text"
+                    class="form-control"
+                    id="Display"
+                    name="Display"
+                    placeholder="Display Name">
+            </div>
+        <div class="form-group">
+            <label for="Email">Email address</label>
+            <input
+                ngModel
+                #Email="ngModel" 
+                type="email"
+                class="form-control" 
+                id="Email"
+                name="Email" 
+                placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="password"
+                ngModel
+                #Password="ngModel" 
+                class="form-control"
+                id="Password"
+                name="Password"
+                placeholder="Password">
+        </div>
+  
+        <button type="submit" class="btn btn-primary submitB">Sign Up</button>
+    </form>
+    </div>
+</div>

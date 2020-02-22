@@ -1,0 +1,47 @@
+.namesList{
+    color: white;
+    background-color: rgb(122, 57, 122, 0.5);   
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
+    overflow-y: scroll;
+    height:80vh;
+
+}
+
+
+.MsgDisplay{
+    height: 80vh;
+}
+
+
+::-webkit-scrollbar {
+    display:none;
+}
+/* code above make scrollbars invisible */
+
+ul{
+    list-style: none;
+}
+
+li{
+    background-color: rgba(99, 96, 102, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom:15px ;
+    margin-left: -40px;
+    cursor: pointer;
+}
+
+li:active{
+    background-color: rgba(45, 43, 46, 0.5);
+
+}
+
+
+
+
+li > a {
+    color: white;
+    text-decoration: none;
+}

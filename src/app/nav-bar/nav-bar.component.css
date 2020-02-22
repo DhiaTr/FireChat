@@ -1,0 +1,17 @@
+.custom{
+    color: white;
+    background-color: rgb(122, 57, 122, 0.5);
+    box-shadow: -1px 4px 12px -1px rgba(0,0,0,0.75);
+}
+
+.buttons{
+    color: white;
+}
+.buttons:hover{
+    text-decoration: none;
+    color: rgb(122, 57, 122);
+}
+
+.logoutB:hover{
+    cursor: pointer;
+}

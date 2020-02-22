@@ -1,0 +1,13 @@
+<nav class="navbar navbar-light custom">
+    <a class="navbar-brand ml-4 text-light" routerLink="/home">
+        <!--text light change the color of the brand -->
+      <i class="fas fa-comments"></i>
+      FireChat
+    </a>
+    <div class="my-2 my-lg-0 mr-4 ">
+        <a class="mr-3 buttons" routerLink="/login" *ngIf="!user">Login</a>
+        <a class="mr-3 buttons" routerLink="/signup" *ngIf="!user">Signup</a>
+        <!-- the more precise the element class the more priority it got? -->
+        <a class="buttons logoutB"  *ngIf="user" (click)="logout()">Logout</a>
+    </div>
+  </nav>

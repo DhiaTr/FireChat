@@ -1,0 +1,21 @@
+<div class="main">
+    <div class="Messages">
+        <div *ngFor="let message of messages">
+            <div class="content">
+                {{ message.content }}
+            </div>
+        </div>
+    </div>
+    <div class="chatSender row justify-content-center">
+        <input
+        ngModel
+        #MSG="ngModel"  
+        type="text"
+        class="col-md-9 mr-3 InField"
+        id="MSG"
+        name="MSG"
+        autocomplete="off">
+        <!-- autcomplete off disables suggestions -->
+        <button class="col-md-2 ml-2 SendB" (click)="send(MSG)">Send</button>
+    </div>
+</div>
