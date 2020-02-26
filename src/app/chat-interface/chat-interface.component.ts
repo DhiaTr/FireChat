@@ -9,6 +9,7 @@ import { MessagingService } from 'src/services/messaging.service';
 export class ChatInterfaceComponent implements OnInit {
 
   messages;
+
   constructor(
     private MService: MessagingService
   ) { }
@@ -16,14 +17,18 @@ export class ChatInterfaceComponent implements OnInit {
   ngOnInit() {
 
     this.MService.getMessages()
-    .subscribe(message => {
-       this.messages = message;
+      .subscribe(message => {
+        this.messages = message;
       });
   }
 
-  send(field){
+  send(field) {
     this.MService.sendMessages(field.value);
-    field.nativeElement.value = ''
+
   }
 
+
+  handleSubmit(event) {
+    this.send(event);
+  }
 }
