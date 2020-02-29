@@ -32,7 +32,7 @@ export class ChatInterfaceComponent implements OnInit, AfterViewChecked {
 
   send(field) {
     this.MService.sendMessages(field.value);
-
+    this.value = '';
   }
 
   scrollToBottom() {
