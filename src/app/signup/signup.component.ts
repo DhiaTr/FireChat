@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/services/auth.service';
 
 @Component({
+  // tslint:disable-next-line: component-selector
   selector: 'signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
@@ -12,12 +13,16 @@ import { ChatComponent } from './chat/chat.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { environment } from 'src/environments/environment';
 
+
 import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ChatInterfaceComponent } from './chat-interface/chat-interface.component';
+import { AuthGuard } from '../services/auth-guard.service';
+import { AuthService } from '../services/auth.service';
+import { MessagingService } from 'src/services/messaging.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,11 @@ import { ChatInterfaceComponent } from './chat-interface/chat-interface.componen
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AuthService,
+    MessagingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

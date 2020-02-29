@@ -10,6 +10,7 @@ export class ChatInterfaceComponent implements OnInit, AfterViewChecked {
   @ViewChild('scroller', { static: false }) private feedContainer: ElementRef;
 
   messages;
+  value;
 
   constructor(
     private MService: MessagingService

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'firebase';
 import { AuthService } from 'src/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -11,7 +12,10 @@ import { AuthService } from 'src/services/auth.service';
 export class NavBarComponent implements OnInit {
 
   user: firebase.User;
-  constructor(private Auth: AuthService) { }
+  constructor(
+    private Auth: AuthService,
+    private route: Router
+  ) { }
 
   ngOnInit() {
     this.Auth.getUser()
@@ -22,6 +26,7 @@ export class NavBarComponent implements OnInit {
 
   logout() {
     this.Auth.logout();
+    this.route.navigate(['/home']);
   }
 
 }

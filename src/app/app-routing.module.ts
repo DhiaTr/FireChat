@@ -5,15 +5,18 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ChatComponent } from './chat/chat.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGuard } from 'src/services/auth-guard.service';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent},
-  { path: 'chat', component: ChatComponent },
-  { path: '**', component: PageNotFoundComponent}
+  { path: 'signup', component: SignupComponent },
+  {
+    path: 'chat', component: ChatComponent, canActivate: [AuthGuard]
+  },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
