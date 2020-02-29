@@ -13,5 +13,10 @@
     width: fill;
 }
 
+.custom-alert{
+    background-color: rgba(197, 95, 95, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+}
 
 
