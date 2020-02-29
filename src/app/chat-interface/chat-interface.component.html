@@ -1,6 +1,9 @@
 <div class="main">
-    <div class="Messages">
-        <div *ngFor="let message of messages">
+    <div #scroller class="Messages">
+        <div class="message" *ngFor="let message of messages">
+            <ul class="stamp">
+                <li> {{ message.user }} at {{ message.time}}</li>
+            </ul>
             <div class="content">
                 {{ message.content }}
             </div>

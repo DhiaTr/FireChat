@@ -8,6 +8,17 @@
     height:70vh;
 }
 
+.message{
+    margin-top: 30px;
+}
+
+.stamp{
+    color: rgb(189, 190, 92);
+    margin: 0;
+}
+
+
+
 .chatSender{
     margin: 10px 0 10px 0;
     margin-left: -15px;

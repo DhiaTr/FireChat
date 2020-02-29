@@ -30,13 +30,13 @@ li{
     padding: 10px;
     margin-bottom:15px ;
     margin-left: -40px;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
-li:active{
+/* li:active{
     background-color: rgba(45, 43, 46, 0.5);
 
-}
+} */
 
 
 

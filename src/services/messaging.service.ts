@@ -1,12 +1,31 @@
 import { Injectable, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessagingService {
+  user;
+  username;
+  constructor(
+    private db: AngularFirestore,
+    private Auth: AuthService
+  ) {
+    // take data from constuctor so it works
+    this.Auth.getUser()
+      .subscribe(val => {
+        this.user = val.uid;
 
-  constructor(private db: AngularFirestore) { }
+
+        db.collection('Users').doc(val.uid).valueChanges()
+          .subscribe(val2 => {
+            this.username = val2;
+          });
+      });
+
+  }
+
 
   getUsers() {
     return this.db.collection('Users').valueChanges();
@@ -14,7 +33,7 @@ export class MessagingService {
 
   getMessages() {
     return this.db
-      .collection('messages', ref => ref.orderBy('time'))
+      .collection('messages', ref => ref.orderBy('order').limitToLast(25))
       .valueChanges();
   }
 
@@ -22,7 +41,8 @@ export class MessagingService {
     const timestamp = this.getTimeStamp();
     return this.db
       .collection('messages')
-      .add({ content: value, time: timestamp });
+      .add({ order: new Date(), content: value, time: timestamp, user: this.username.displayName });
+
   }
 
   getTimeStamp() {

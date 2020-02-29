@@ -7,12 +7,15 @@ import { AuthService } from 'src/services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent{
+export class LoginComponent {
 
   constructor(private Auth: AuthService) { }
 
-  Login(LoginForm){
-    console.log(LoginForm.LoginMail);
+  Login(LoginForm) {
+    this.Auth.getUser()
+      .subscribe(val => {
+        console.log(val);
+      });
     this.Auth.login(LoginForm.value.LoginMail, LoginForm.value.Password);
   }
 
