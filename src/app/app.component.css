@@ -2,6 +2,11 @@
     color: white;
     height: 100vh;
     background: url('../img/Awesome-Galaxy-On-Space-Wallpaper-PC.jpg') no-repeat ;
-    overflow-y: hidden;
+    overflow-y: scroll;
+    /* scroll needed to make it scrollable item qm */
 
+}
+
+::-webkit-scrollbar {
+    display:none;
 }

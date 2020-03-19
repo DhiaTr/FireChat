@@ -6,12 +6,15 @@
     margin-right: 10px;
     overflow-y: scroll;
     height:80vh;
+    margin: auto;
+    margin-top: 20px;
 
 }
 
 
 .MsgDisplay{
     height: 80vh;
+    margin-top: 20px;
 }
 
 

@@ -10,8 +10,8 @@
         </div>
     </div>
     <div class="chatSender row justify-content-center">
-        <input ngModel #MSG="ngModel" type="text" class="col-md-9 mr-3 InField" id="MSG" name="MSG" [(ngModel)]="value"
-            (keydown.enter)="handleSubmit(MSG)" autocomplete="off">
+        <input placeholder="type your message here" ngModel #MSG="ngModel" type="text" class="col-md-9 mr-3 InField"
+            id="MSG" name="MSG" [(ngModel)]="value" (keydown.enter)="handleSubmit(MSG)" autocomplete="off">
         <!-- autcomplete off disables suggestions -->
         <button class="col-md-2 ml-2 SendB" (click)="send(MSG)">Send</button>
     </div>

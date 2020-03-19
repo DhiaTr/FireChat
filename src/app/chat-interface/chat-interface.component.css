@@ -33,6 +33,7 @@
     border: none;
     background-color: rgba(67, 68, 62, 0.5);
     border-radius: 10px;
+    margin-left: 20px;
 }
 
 .InField:focus{
@@ -47,6 +48,10 @@
     border: none;
     color: white;
     box-shadow: 2px 3px 16px -1px rgba(0,0,0,0.75);
+    width: 90%;
+    height: 50px;
+    margin-top: 10px;
+    margin-right: 5px;
 }
 
 .SendB:active{
