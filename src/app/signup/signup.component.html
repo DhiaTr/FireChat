@@ -23,7 +23,7 @@
                     id="Password" name="Password" placeholder="Password">
                 <div class="custom-alert mt-2" *ngIf="Password.invalid && Password.touched">
                     <div *ngIf="Password.errors.required">This field is required</div>
-                    <div *ngIf="Password.errors.minlength && !Password.errors.required">Display name too short</div>
+                    <div *ngIf="Password.errors.minlength && !Password.errors.required">Password too short</div>
                 </div>
             </div>
 

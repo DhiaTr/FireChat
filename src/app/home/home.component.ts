@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/services/auth.service';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -8,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  user;
+  constructor(private Auth: AuthService) {
+    Auth.getUser().subscribe(user => {
+      this.user = user;
+    });
+  }
 
   ngOnInit() {
   }
