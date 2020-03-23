@@ -11,7 +11,7 @@ export class SignupComponent {
 
   constructor(private Auth: AuthService) { }
 
-  createUser(form){
+  createUser(form) {
     this.Auth.createUser(form.value);
   }
 

@@ -12,7 +12,7 @@ import { Route } from '@angular/compiler/src/core';
 export class LoginComponent {
 
   constructor(private Auth: AuthService,
-    private route: Router) { }
+              private route: Router) { }
 
   Login(LoginForm) {
     this.Auth.login(LoginForm.value.LoginMail, LoginForm.value.Password);
