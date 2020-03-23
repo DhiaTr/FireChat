@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,14 @@ export class AuthService {
 
   getUser() {
     return this.AFAuth.authState;
+  }
+
+  getUsersDB() {
+    return this.getUser()
+      .pipe(switchMap(val => {
+        return this.db.collection('Users').doc(val.uid).valueChanges();
+      }));
+    // switchmap switches the observable after changing it qm
   }
 
 

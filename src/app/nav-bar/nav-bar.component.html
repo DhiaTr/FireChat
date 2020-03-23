@@ -8,6 +8,6 @@
     <a class="mr-3 buttons" routerLink="/login" *ngIf="!user">Login</a>
     <a class="mr-3 buttons" routerLink="/signup" *ngIf="!user">Signup</a>
     <!-- the more precise the element class the more priority it got? -->
-    <a class="buttons logoutB" *ngIf="user" (click)="logout()">Logout</a>
+    <div *ngIf="user">{{ userName }} <span class="buttons logoutB" (click)="logout()">(Logout)</span></div>
   </div>
 </nav>

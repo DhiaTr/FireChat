@@ -3,6 +3,7 @@ import { User } from 'firebase';
 import { AuthService } from 'src/services/auth.service';
 import { Router } from '@angular/router';
 import { MessagingService } from 'src/services/messaging.service';
+import { user } from '../models/user';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -12,14 +13,17 @@ import { MessagingService } from 'src/services/messaging.service';
 })
 export class NavBarComponent implements OnInit {
 
-  test;
+  userName;
   user: firebase.User;
   constructor(
     private Auth: AuthService,
     private route: Router,
     private msgService: MessagingService
   ) {
-    this.test = msgService.username;
+    Auth.getUsersDB()
+      .subscribe((val: user) => {
+        this.userName = val.displayName;
+      });
   }
 
   ngOnInit() {
@@ -35,7 +39,7 @@ export class NavBarComponent implements OnInit {
   }
 
   getUserName() {
-    console.log(this.test);
+    console.log(this.userName);
   }
 
 }
